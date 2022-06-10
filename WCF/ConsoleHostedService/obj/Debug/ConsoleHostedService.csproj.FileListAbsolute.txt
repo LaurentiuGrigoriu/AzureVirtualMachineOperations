@@ -1,0 +1,6 @@
+E:\Code\School\WCF\ConsoleHostedService\bin\Debug\ConsoleHostedService.exe.config
+E:\Code\School\WCF\ConsoleHostedService\bin\Debug\ConsoleHostedService.exe
+E:\Code\School\WCF\ConsoleHostedService\bin\Debug\ConsoleHostedService.pdb
+E:\Code\School\WCF\ConsoleHostedService\obj\Debug\ConsoleHostedService.csproj.CoreCompileInputs.cache
+E:\Code\School\WCF\ConsoleHostedService\obj\Debug\ConsoleHostedService.exe
+E:\Code\School\WCF\ConsoleHostedService\obj\Debug\ConsoleHostedService.pdb

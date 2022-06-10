@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.7.2" />
+    </startup>
+	<system.serviceModel>
+	  <bindings>
+		  <wsHttpBinding>
+			  <binding name="EnrollmentSoapBinding" maxReceivedMessageSize="2147483647" maxBufferPoolSize="2147483647">
+				  <readerQuotas maxArrayLength="2147483647" maxStringContentLength="2147483647" maxBytesPerRead="2147483647"/>
+				  <security mode="None">
+					  <transport clientCredentialType="None"/>
+					  <message establishSecurityContext="false"/>
+				  </security>
+			  </binding>
+		  </wsHttpBinding>
+		  <basicHttpBinding>
+			  <!--    Stream    -->
+			  <binding name="HttpStreaming" maxReceivedMessageSize="67108864" transferMode="Streamed"/>
+			  <binding name="Streaming_Binding" maxReceivedMessageSize="67108864" messageEncoding="Text" textEncoding="utf-8" transferMode="Streamed"></binding>
+			  <binding name="httpsMaxSizeBinding" closeTimeout="00:30:00" openTimeout="00:30:00" sendTimeout="00:30:00" receiveTimeout="00:45:00" maxReceivedMessageSize="2147483647" maxBufferPoolSize="2147483647">
+				  <readerQuotas maxArrayLength="2147483647" maxStringContentLength="2147483647"/>
+				  <security mode="Transport"/>
+			  </binding>
+			  <binding name="httpsBinding" closeTimeout="00:30:00" openTimeout="00:30:00" sendTimeout="00:30:00" receiveTimeout="00:45:00">
+				  <security mode="Transport"/>
+			  </binding>
+			  <binding name="httpMaxSizeBinding" closeTimeout="00:30:00" openTimeout="00:30:00" sendTimeout="00:30:00" receiveTimeout="00:45:00" maxReceivedMessageSize="2147483647" maxBufferPoolSize="2147483647">
+				  <readerQuotas maxArrayLength="2147483647" maxStringContentLength="2147483647"/>
+				  <security mode="None"/>
+			  </binding>
+			  <binding name="httpBinding" closeTimeout="00:30:00" openTimeout="00:30:00" sendTimeout="00:30:00" receiveTimeout="00:45:00">
+				  <security mode="None"/>
+			  </binding>
+		  </basicHttpBinding>
+		  <webHttpBinding>
+			  <binding name="Binding" crossDomainScriptAccessEnabled="true">
+				  <security mode="Transport">
+					  <transport clientCredentialType="None"/>
+				  </security>
+			  </binding>
+			  <binding name="httpbind" crossDomainScriptAccessEnabled="true">
+			  </binding>
+		  </webHttpBinding>
+	  </bindings>
+	  <behaviors>
+		  <serviceBehaviors>
+			  <behavior name="httpsBehavior">
+				  <serviceMetadata httpsGetEnabled="true"/>
+			  </behavior>
+			  <behavior name="httpBehavior">
+				  <serviceMetadata httpGetEnabled="true"/>
+			  </behavior>
+			  <behavior name="ServiceBehaviour">
+				  <serviceMetadata httpGetEnabled="true" httpsGetEnabled="true"/>
+				  <serviceDebug includeExceptionDetailInFaults="true"/>
+			  </behavior>
+		  </serviceBehaviors>
+		  <endpointBehaviors>
+			  <behavior name="web">
+				  <webHttp helpEnabled="true"/>
+			  </behavior>
+		  </endpointBehaviors>
+
+	  </behaviors>
+		<services>
+			<service name="ConsoleHostedService.EventServerMachineService">
+				<host>
+					<baseAddresses>
+						<add baseAddress="http://localhost/EventServerMachine" />
+					</baseAddresses>
+				</host>
+				<endpoint address="http://localhost/EventServerMachine" binding="basicHttpBinding" contract="ConsoleHostedService.IEventServerMachineService" />
+			</service>
+		</services>
+		<client>
+			<!-- Used to signal the master machine when a slave machine started-->
+			<endpoint address="http://localhost/EventServerMachine"
+				  binding="basicHttpBinding"
+				  contract="ConsoleHostedService.Client.IEventServerMachineService"
+				  name="BasicHttpBinding_IMasterService" />
+		</client>
+	</system.serviceModel>
+	<appSettings>
+		<!-- Machine is Slave-->
+		<add key="IsSlave" value="false"/>
+
+		<!-- Machine name-->
+		<add key="MachineName" value="MasterMachine"/>
+	</appSettings>
+</configuration>
