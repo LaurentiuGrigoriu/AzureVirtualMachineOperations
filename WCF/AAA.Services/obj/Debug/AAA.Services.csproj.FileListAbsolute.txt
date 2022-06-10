@@ -1,7 +1,0 @@
-E:\Code\School\WCF\AAA.Services\bin\Debug\AAA.Services.dll.config
-E:\Code\School\WCF\AAA.Services\bin\Debug\AAA.Services.dll
-E:\Code\School\WCF\AAA.Services\bin\Debug\AAA.Services.pdb
-E:\Code\School\WCF\AAA.Services\obj\Debug\AAA.Services.csproj.AssemblyReference.cache
-E:\Code\School\WCF\AAA.Services\obj\Debug\AAA.Services.csproj.CoreCompileInputs.cache
-E:\Code\School\WCF\AAA.Services\obj\Debug\AAA.Services.dll
-E:\Code\School\WCF\AAA.Services\obj\Debug\AAA.Services.pdb
