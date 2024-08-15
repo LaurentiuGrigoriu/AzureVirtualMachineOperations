@@ -24,8 +24,8 @@ namespace AzureExample
             static public string subnetName = "Subnet-Fluent";
             static public string subnetAddress = "172.16.0.0/24";
             static public string nicName = "NIC-Fluent";
-            static public string adminUser = "azureadminuser";
-            static public string adminPassword = "xxxxxx";
+            static public string adminUser = "MyUsername";
+            static public string adminPassword = "MyPassword";
             static public string publicIPName = "publicIP-Fluent";
             static public string nsgName = "NSG-Fluent";
         }
