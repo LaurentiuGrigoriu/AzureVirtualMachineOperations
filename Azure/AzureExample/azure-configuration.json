@@ -1,8 +1,8 @@
 {
-  "clientId": "xxxxxxxx-88ff-44cc-aa33-00bb88ff33aa",
-  "clientSecret": "pcv7Q~VQQlakDXcbJp6zsyIbUqJYhKw9f47pU",
-  "subscriptionId": "444bbdaa-dfdf-1234-5678-9abcdef01234",
-  "tenantId": "cf50e1f6-5246-4193-9daf-248896aa5d1e",
+  "clientId": "xxxxxxxx-yyyy-zzzz-aaaa-qqqqqqqqqqqq",
+  "clientSecret": "WriteClientSecretHere",
+  "subscriptionId": "xxxxxxxxxxxxxxxxxxxxxxxxx",
+  "tenantId": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
   "activeDirectoryEndpointUrl": "https://login.microsoftonline.com",
   "resourceManagerEndpointUrl": "https://management.azure.com/",
   "activeDirectoryGraphResourceId": "https://graph.windows.net/",
